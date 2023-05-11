@@ -1,0 +1,5 @@
+en:
+  address_input: "%{street}, %{city}, %{zipcode}"
+  address_result: "%{delivery_line_1}, %{city_name}, %{zipcode}-%{plus4_code}"
+  input_error: "Please provide an input file as an argument"
+  invalid_address: "Invalid Address"
