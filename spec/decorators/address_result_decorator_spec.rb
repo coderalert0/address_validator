@@ -7,7 +7,11 @@ describe AddressResultDecorator do
     let(:candidate) { build :candidate }
 
     it 'displays the corrected address' do
-      expect(subject.display).to eq '143 E Main St, Columbus, 43215-5370'
+      expect(subject.display).to eq({ :city_name=>"Columbus",
+                                      :delivery_line_1 => "143 E Main St",
+                                      :state_abbreviation => nil,
+                                      :plus4_code => "5370",
+                                      :zipcode => "43215" })
     end
   end
 
@@ -15,7 +19,7 @@ describe AddressResultDecorator do
     let(:candidate) { }
 
     it 'displays invalid address message' do
-      expect(subject.display).to eq 'Invalid Address'
+      expect(subject.display).to eq nil
     end
   end
 end

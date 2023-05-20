@@ -29,6 +29,9 @@ class AddressValidator
 
     # display results to stdout
     @address_table.print
+    @address_table.invalid_count_display
+    @address_table.valid_count_display
+    @address_table.state_count_display
   end
 end
 

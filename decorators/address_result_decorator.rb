@@ -11,13 +11,14 @@ class AddressResultDecorator
 
   def display
     if candidate.nil?
-      I18n.t(:invalid_address)
+      nil
     else
-      I18n.t(:address_result,
-             delivery_line_1: candidate.delivery_line_1,
-             city_name: candidate.components.city_name,
-             zipcode: candidate.components.zipcode,
-             plus4_code: candidate.components.plus4_code)
+      { :delivery_line_1  => candidate.delivery_line_1,
+        :city_name => candidate.components.city_name,
+        :state_abbreviation => candidate.components.state_abbreviation,
+        :zipcode => candidate.components.zipcode,
+        :plus4_code => candidate.components.plus4_code
+      }
     end
   end
 end
